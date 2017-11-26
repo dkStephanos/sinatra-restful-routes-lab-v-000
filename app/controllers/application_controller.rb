@@ -41,4 +41,9 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  post '/recipes' do
+    @recipe = Recipe.create(params)
+    erb :show
+  end
+
 end
