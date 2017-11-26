@@ -11,4 +11,9 @@ class ApplicationController < Sinatra::Base
   get '/' do
 
   end
+
+  get '/recipes/:id' do
+    @post = Post.find(params["id"])
+    erb :show
+  end
 end
