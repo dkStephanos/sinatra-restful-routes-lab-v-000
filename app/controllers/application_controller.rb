@@ -1,3 +1,5 @@
+require 'pry'
+
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -18,6 +20,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get 'recipes/:id/delete' do
+    binding.pry
     Recipe.delete(params["id"])
     erb :index
   end
