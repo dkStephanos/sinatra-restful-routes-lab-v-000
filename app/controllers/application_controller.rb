@@ -20,7 +20,7 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/recipes/:id/delete' do
-    #binding.pry
+    binding.pry
     Recipe.delete(params["id"])
     erb :index
   end
